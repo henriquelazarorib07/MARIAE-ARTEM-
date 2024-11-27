@@ -9,6 +9,18 @@ body {
     height: 100%;
     background-color: #CADBE7;
 }
+.navbar {
+    display: flex; /* Usa flexbox para o layout */
+    justify-content: center; /* Centraliza a imagem horizontalmente */
+    align-items: center; /* Centraliza a imagem verticalmente */
+    height: 102px; /* Define a altura da barra de navegação, ajuste conforme necessário */
+    width: 93PX;
+    background-color: #333; /* Cor de fundo da barra de navegação, ajuste conforme necessário */
+}
+.navbar img {
+    display: block; /* Garante que a imagem não tenha margem ou padding indesejado */
+}
+
 .barra-navegacao {
     background-color: #1B4769;
     border-radius: 25px;
