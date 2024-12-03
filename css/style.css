@@ -4,27 +4,91 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 body {
     overflow-x: hidden;
     height: 100%;
     background-color: #CADBE7;
 }
-.navbar {
-    display: flex; /* Usa flexbox para o layout */
-    justify-content: center; /* Centraliza a imagem horizontalmente */
-    align-items: center; /* Centraliza a imagem verticalmente */
-    height: 102px; /* Define a altura da barra de navegação, ajuste conforme necessário */
-    width: 93PX;
-    background-color: #333; /* Cor de fundo da barra de navegação, ajuste conforme necessário */
-}
-.navbar img {
-    display: block; /* Garante que a imagem não tenha margem ou padding indesejado */
+
+nav {
+    width: 100%;
+    background-color: #1B4769; /* Cor de fundo da barra de navegação, ajuste conforme necessário */
+    border-bottom-left-radius: 25px;  /* Arredonda o canto inferior esquerdo */
+    border-bottom-right-radius: 25px; /* Arredonda o canto inferior direito */
+    padding: 10px 20px;
 }
 
 .barra-navegacao {
-    background-color: #1B4769;
-    border-radius: 25px;
+    display: flex;
+    align-items: center; /* Alinha todos os itens verticalmente */
+    justify-content: space-between; /* Espaça os itens entre si */
+    
 }
+
+/* Estilos para o logo */
+.navbar-logo {
+    display: block;
+    margin: 0 auto; /* Centraliza a imagem */
+    height: 100px; /* Ajuste conforme o tamanho desejado para o logo */
+    justify-items: center;
+    
+}
+
+/* Estilos para os botões da navbar */
+.navbar-buttons {
+    margin-left: auto; /* Empurra os botões para a direita */
+    color: #26C1E3;
+}
+
+.nav-btn {
+    background-color: #26C1E3;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.nav-btn:hover {
+    background-color: rgb(7, 40, 148);
+}
+
+/* Estilos para o campo de pesquisa */
+.search-container {
+    position: relative;
+    flex-grow: 1; /* O campo de pesquisa ocupa o espaço restante */
+    max-width: 300px;
+
+}
+
+.search-input {
+    padding: 8px 10px;
+    border-radius: 20px;
+    
+    font-size: 16px;
+    width: 100%;
+    padding-right: 30px; /* Espaço extra para o ícone */
+    background-color: #26C1E3;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;  /* Move o ícone para a direita */
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #888;
+}
+
+/* Efeito de hover no botão */
+.search-button:hover {
+    background-color: #26C1E3;
+}
+
+
+
 .button-montar{
     background-color: #26C1E3;
     font-size: 15px;
@@ -35,34 +99,76 @@ body {
 }
 .img-pecas{
     background-color: #26C1E3;
+}
+
+#cadastro {
+    background-image: url(../img/ns\ do\ rosario.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 25vh; /* 100% da altura da tela */
+    margin: 0; /* Remove qualquer margem */
+    display: flex;
+    align-items: center; /* Alinha todos os itens verticalmente */
+    justify-content: space-between; /* Espaça os itens entre si */
+    
+}
+
     
 
+
+.form-container {
+    background-color: #507FA9;
+    padding: 40px 60px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+    height: 100%;
+    max-height: 400px;
+    margin: 20px;
+    margin-right: 100px;
+    justify-items: end;
 }
-.form-group{
+
+.form-container form {
+    text-align: center; /* Centraliza o botão */
+    justify-items: end;
+
+    
+}
+
+.form-container h2 {
+    margin-bottom: 50px;
+}
+
+.form-container button {
+    justify-items: center;
+    align-items: center;
+}
+
+.form-group {
     margin-bottom: 20px;
 }
-.form-group input, select{
+
+.form-group input, select {
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #507FA9;
+    border: 1px solid #CADBE7;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
     outline: none;
     transition: border-color 0.3s;
-    
+}
+.btn-enviar{
+    border-radius: 60px;
 }
 
-form {
-    background-color: #507FA9;
-    height: 560px;
-    
+.form-group input:focus, select:focus {
+    border-color: #2ECC71;
 }
-.form-control{
-    background-color: #CADBE7;
-    height: 50px;
 
-}
 footer{
     background-color: #507FA9;
 }
@@ -76,6 +182,7 @@ footer{
     gap: 20px;
     padding: 20px;
     justify-items: center;
+    
 
 }
 .card{
@@ -124,6 +231,9 @@ footer{
     justify-content: center;
 
 }
+
+
+
 
 
 

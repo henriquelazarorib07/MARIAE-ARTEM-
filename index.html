@@ -11,17 +11,19 @@
     <nav>
         
         <div class="barra-navegacao">
-            <button>
-                <input type="text" id="txtBusca" placeholder="O que você deseja?"/>
-                <img src="search3.png" id="btnBusca" alt="Buscar"/>
-        </button>
+            
+            <div class="search-container">
+                <input type="search" class="search-input" placeholder="O que você deseja?">
+                <span class="search-icon">&#128269;</span> <!-- Ícone de lupa usando código HTML -->
+            </div>
 
-        <img src="img/logo (sem fundo).png" alt="Logo" width="50"> <!--LOGO MARIAE ARTEM -->
-            <ul>
-                <li><a href="CHAT">Chat</a></li>
-                <li><a href="USUARIO">Usuario</a></li>
-                <li><a href="SACOLA">Sacola</a></li>
-            </ul>
+            <img src="img/logo (sem fundo).png" alt="Logo" class="navbar-logo"> <!--LOGO MARIAE ARTEM -->
+            
+            <div class="navbar-buttons">
+                <button class="nav-btn">Contato</button>
+                <button class="nav-btn">Usuário</button>
+                <button class="nav-btn">Sacola</button>
+            </div>
         </div>
     </nav>
     <header id="area-de-produtos">
@@ -48,31 +50,24 @@
         </div>
     </header>
     <section id="cadastro">
-        <img src="img/ns do rosario.jpeg" alt="" width="100"> <!--IMAGEM TERÇO N SR DO ROSARIO-->
-
-        <h1 class="textos-principais">CADASTRE-SE</h1>
-
-        <form>
-            <div>
-                <div>
-                    <input type="text" class="form-control" placeholder="Nome:" required>
-
+        
+        
+        <div class="form-container">
+            <h2>CADASTRE-SE</h2>
+            <form action="">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Nome" required>
                 </div>
-                <div>
-                    <input type="text" class="form-control"  placeholder="E-mail:" required>
-
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="E-mail" required>
                 </div>
-                <div>
-                    <input type="text" class="form-control" placeholder="Celular:" required>
-
+                <div class="form-group">
+                    <input type="tel" id="telefone" placeholder="Celular" required>
                 </div>
-
+                <div class="form-group">
+                    
                 </div>
-                <div>
-                    <button class="btn btn-enviar" type="button">Enviar</button>
-                </div>
-
-        </div>
+                <button class="btn" type="submit">Enviar</button>
         </form>
 
     </section>
