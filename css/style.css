@@ -41,22 +41,48 @@ nav {
     border-bottom-left-radius: 25px;  /* Arredonda o canto inferior esquerdo */
     border-bottom-right-radius: 25px; /* Arredonda o canto inferior direito */
     padding: 10px 20px;
+    box-shadow: 0 6px 10px #072894;
 }
 
 .barra-navegacao {
     display: flex;
     align-items: center; /* Alinha todos os itens verticalmente */
-    justify-content: space-between; /* Espaça os itens entre si */
-    
-}
-/* Estilos para o campo de pesquisa */
-.search-container {
+    justify-content: space-between; /* Distribui os itens com espaço entre eles */
     position: relative;
-    flex-grow: 1; /* O campo de pesquisa ocupa o espaço restante */
-    max-width: 300px;
-
 }
 
+.search-container {
+    position: absolute;
+    left: 20px;  /* Faz com que a barra de pesquisa fique à esquerda */
+    max-width: 300px;
+}
+
+.navbar-buttons {
+    margin-left: auto; /* Empurra os botões para a direita */
+    color: #26C1E3;
+    display: flex; /* Se os botões estiverem dentro de um contêiner, use flexbox */
+    justify-content: flex-end;
+}
+
+.nav-btn {
+    padding: 10px 15px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilos para a logo */
+.navbar-logo {
+    position: absolute; /* Usa posição absoluta para centralizar a logo */
+    left: 50%; /* Posiciona o centro da logo no meio da navbar */
+    transform: translateX(-50%); /* Ajusta a logo para que o centro esteja exato no meio */
+    height: 200px; /* Ajuste o tamanho da logo conforme necessário */
+    width: auto;
+    max-height: 100%; /* Garante que a logo não ultrapasse a altura da navbar */
+    max-width: 100%;  /* Garante que a logo não ultrapasse a largura da navbar */
+}
+
+/* Estilos para o botão de pesquisa */
 .search-input {
     padding: 8px 10px;
     border-radius: 20px;
@@ -76,33 +102,11 @@ nav {
     color: #888;
 }
 
-/* Efeito de hover no botão */
 .search-button:hover {
-    background-color: rgb(7, 40, 148);
+    background-color: #072894;
 }
 
-/* Estilos para o logo */
-.navbar-logo {
-    display: block;
-    margin: 0 auto; /* Centraliza a imagem */
-    height: 100px; /* Ajuste conforme o tamanho desejado para o logo */
-    justify-items: center;
-    
-}
-
-/* Estilos para os botões da navbar */
-.navbar-buttons {
-    margin-left: auto; /* Empurra os botões para a direita */
-    color: #26C1E3;
-}
-
-.nav-btn {
-    padding: 10px 15px;
-    margin-left: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
+/* Efeito de hover no botão */
 .nav-btn img {
     transition: all 0.5s;
 }
@@ -111,6 +115,7 @@ nav {
     width: 50px;
     border-radius: 25%;
 }
+
 
 
 /* Estilo para o header */
@@ -132,6 +137,7 @@ header {
     background-repeat: no-repeat;
     border-radius: 25px;
     flex-grow: 1;                   /* Faz o banner ocupar o maior espaço possível */
+    
 }
 
 .container-pecas{
@@ -186,74 +192,71 @@ header {
     background-repeat: no-repeat;
     height: 70vh; /* 100% da altura da tela */
     margin: 0; /* Remove qualquer margem */
-    display: flex;
-    align-items: center; /* Alinha todos os itens verticalmente */
     justify-content: space-between; /* Espaça os itens entre si */
+    display: flex;
+    justify-content: flex-end; /* Alinha o conteúdo à direita */
+    align-items: center; /* Alinha verticalmente no centro da seção */
+    height: 100vh; /* Garante que a altura ocupe toda a tela ou a altura desejada */
+    padding: 20px;
     
 }
-.form-section {
-    position: relative; /* Isso vai permitir que o form-container seja posicionado dentro dela */
-    height: 100vh; /* Tamanho da seção, pode ser ajustado conforme necessário */
-    background-color: #f4f4f4;
-}
-
-/* Formulário */
 .form-container {
     background-color: #507FA9;
     padding: 40px 60px;
     border-radius: 50px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 300px;
-    position: end; /* Posiciona o formulário dentro da section */
-    top: 20px; /* Distância do topo da section */
-    right: 20px; /* Distância da borda direita da section */
-    margin-left: auto;
+    max-width: 400px;
+    height: 100%;
+    max-height: 450px;
+    margin: 20px;
+    margin-right: 100px;
 }
 
 .form-container form {
-    text-align: center; /* Centraliza o conteúdo do formulário */
-    justify-items: end;
+    text-align: center; /* Centraliza o botão */
+    background-color: #507FA9;
+
 }
 
-.form-container h2 {
-    margin-bottom: 50px;
+.form-container h3 {
+    text-align: center; /* Centraliza o texto horizontalmente */
+    margin-bottom: 30px; /* Ajuste para espaçar do conteúdo abaixo */
+    color: #fff; /* Cor do texto */
+    font-size: 20px; /* Ajuste o tamanho do texto conforme necessário */
+    padding: 0; /* Remover padding para evitar deslocamentos */
+    position: relative; /* Para evitar que o título saia da área do formulário */
+   
 }
 
 .form-container button {
-    justify-items: center; 
+    justify-items: center;
     align-items: center;
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
-.form-group input, select {
+.form-group input, .form-group select {
     width: 100%;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #CADBE7;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
+    border-radius: 8px;
     outline: none;
     transition: border-color 0.3s;
-}
-
-.btn-enviar {
-    border-radius: 60px;
-    
-}
-
-.form-group input:focus, select:focus {
-    border-color: #2ECC71;
+    box-sizing: border-box;
+    appearance: none; /* Remove o estilo nativo do select */
 }
 
 .container-depoimentos{
-    height: 70vh;
+    height: 120vh;
     background-color:  #1B4769;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    padding-top: 20px; /* Adiciona um espaçamento interno no topo do contêiner */
 }
 
 .card-container {
@@ -280,10 +283,17 @@ header {
     transform: translateY(-10px); /* Move o card para cima */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta a sombra */
 }
-.card h3 {
-    font-size: 14px; /* Tamanho da fonte do título */
-    margin-bottom: 30px;
+.container-depoimentos h2 {
+    text-align: center; /* Centraliza o texto horizontalmente */
+    margin-bottom: 30px; /* Ajuste para espaçar do conteúdo abaixo */
+    margin-top: 20px; /* Ajusta a margem superior para afastar o título do limite superior da seção */
+    color: #fff; /* Cor do texto */
+    font-size: 20px; /* Ajuste o tamanho do texto conforme necessário */
+    padding: 0; /* Remove padding */
+    position: relative; /* Para evitar que o título saia da área do formulário */
 }
+
+
 .card p {
     font-size: 12px; /* Tamanho da fonte do parágrafo */
     color: #555; /* Cor do texto (cinza claro) */
