@@ -25,7 +25,7 @@ button {
 } 
 
 button:hover {
-    padding: 11px 21px; 
+    padding: 21px 41px; 
     background-color: #1B4769;
 }
 
@@ -40,7 +40,7 @@ nav {
     background-color: #1B4769; /* Cor de fundo da barra de navegação, ajuste conforme necessário */
     border-bottom-left-radius: 25px;  /* Arredonda o canto inferior esquerdo */
     border-bottom-right-radius: 25px; /* Arredonda o canto inferior direito */
-    padding: 10px 20px;
+    padding: 50px 20px;
     box-shadow: 0 6px 10px #072894;
 }
 
@@ -64,22 +64,13 @@ nav {
     justify-content: flex-end;
 }
 
-.nav-btn {
-    padding: 10px 15px;
-    margin-left: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
 /* Estilos para a logo */
 .navbar-logo {
     position: absolute; /* Usa posição absoluta para centralizar a logo */
     left: 50%; /* Posiciona o centro da logo no meio da navbar */
     transform: translateX(-50%); /* Ajusta a logo para que o centro esteja exato no meio */
-    height: 200px; /* Ajuste o tamanho da logo conforme necessário */
-    width: auto;
-    max-height: 100%; /* Garante que a logo não ultrapasse a altura da navbar */
-    max-width: 100%;  /* Garante que a logo não ultrapasse a largura da navbar */
+    width: 100%;
+    max-width: 80px;  /* Garante que a logo não ultrapasse a largura da navbar */
 }
 
 /* Estilos para o botão de pesquisa */
@@ -107,16 +98,21 @@ nav {
 }
 
 /* Efeito de hover no botão */
+.nav-btn {
+    margin-right: 50px;
+    cursor: pointer;
+}
+
 .nav-btn img {
     transition: all 0.5s;
 }
 
 .nav-btn img:hover {
     width: 50px;
-    border-radius: 25%;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: #072894;
 }
-
-
 
 /* Estilo para o header */
 header {
@@ -130,7 +126,7 @@ header {
 .container-banner {
     margin-top: 20px;
     width: 100%;
-    height: 70vh;
+    height: 80vh;
     background-image: url(../img/banner\ principal\ I.png);
     background-size: cover;
     background-position: center;
@@ -140,8 +136,8 @@ header {
     
 }
 
-.container-pecas{
-    height: 70vh;
+.container-pecas {
+    height: 80vh;
     display: grid; /* Define o layout como grid */
     grid-template-columns: repeat(3, 1fr); /* Cria 3 colunas iguais */
     gap: 20px; /* Espaço entre os itens do grid */
@@ -149,39 +145,55 @@ header {
     justify-items: center; /* Centraliza os cards horizontalmente nas colunas */
 }
 
-.peca{
+.peca {
     position: relative;
     display: inline-block;
+    width: 100%; /* A peça deve ocupar todo o espaço disponível */
+    max-width: 300px; /* Largura máxima da peça */
+    height: 100%;
+    max-height: 450px;
+    margin-top: 120px;
 }
 
 .peca img {
-    height: 100%;
     width: 100%;
-    max-height: 400px;
-    max-width: 300px; /* Altere conforme necessário */
+    height: auto;
+    max-height: 400px; /* Garante que a altura máxima da imagem não ultrapasse 400px */
+    display: block; /* Remove o espaço abaixo da imagem */
+    object-fit: cover; /* Garante que a imagem cubra todo o espaço sem cortar, mantendo a proporção */
 }
 
 .btn-peca {
     position: absolute;
     bottom: 0;
-    font-size: 24px;
+    left: 0;
+    width: 100%; /* O botão ocupará toda a largura da imagem */
+    height: 15%; /* O botão terá 15% da altura da imagem */
     background-color: #26C1E3;
-    cursor: pointer;
-    width: 100%;
-    height: 15%; /* Altura da parte inferior da imagem que será preenchida */
+    font-size: 24px;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all 0.5s;
+    cursor: pointer;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    color: #fff; /* Cor do texto */
+    box-sizing: border-box; /* Faz o botão se ajustar dentro do contêiner */
 }
 
-.btn-peca:hover{
+.btn-peca:hover {
     background-color: #1B4769;
 }
 
-.btn-peca a{
+.btn-peca a {
     text-decoration: none;
     color: #fff;
+    display: block;
+    width: 100%;
+    text-align: center; /* Garante que o texto dentro do botão fique centralizado */
+    padding: 0; /* Remove o padding do link para garantir que fique colado */
+    margin: 0; /* Remove margens para garantir que fique colado à borda do botão */
 }
 
 
@@ -190,13 +202,12 @@ header {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 70vh; /* 100% da altura da tela */
+    height: 60vh; /* 100% da altura da tela */
     margin: 0; /* Remove qualquer margem */
     justify-content: space-between; /* Espaça os itens entre si */
     display: flex;
     justify-content: flex-end; /* Alinha o conteúdo à direita */
     align-items: center; /* Alinha verticalmente no centro da seção */
-    height: 100vh; /* Garante que a altura ocupe toda a tela ou a altura desejada */
     padding: 20px;
     
 }
@@ -226,7 +237,7 @@ header {
     font-size: 20px; /* Ajuste o tamanho do texto conforme necessário */
     padding: 0; /* Remover padding para evitar deslocamentos */
     position: relative; /* Para evitar que o título saia da área do formulário */
-   
+
 }
 
 .form-container button {
@@ -251,89 +262,140 @@ header {
     appearance: none; /* Remove o estilo nativo do select */
 }
 
-.container-depoimentos{
-    height: 120vh;
+.container-depoimentos {
+    height: 80vh;
     background-color:  #1B4769;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
-    padding-top: 20px; /* Adiciona um espaçamento interno no topo do contêiner */
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    padding-top: 20px;
 }
 
 .card-container {
-    display: grid; /* Define o layout como grid */
-    grid-template-columns: repeat(3, 1fr); /* Cria 3 colunas iguais */
-    gap: 20px; /* Espaço entre os itens do grid */
-    padding: 20px; /* Espaçamento interno no container */
-    justify-items: center; /* Centraliza os cards horizontalmente nas colunas */
+    display: grid; /* Layout grid para os cards */
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+    gap: 20px; /* Espaço entre os cards */
+    padding: 20px; /* Espaçamento interno */
+    justify-items: center; /* Centraliza os cards nas colunas */
 }
 
 .card {
-    margin-top: 15vh;
-    background-color: white; /* Cor de fundo branca para o card */
-    width: 400px; /* Largura do card */
-    height: 300px; /* Altura do card */
-    border-radius: 50px;/* Bordas arredondadas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidade */
-    overflow: hidden; /* Garante que conteúdo extra fora do card seja escondido */
-    transition: transform 0.1s ease; /* Animação suave ao passar o mouse */
-    text-align: center; /* Centraliza o conteúdo dentro do card */
-    padding: 20px; /* Espaçamento interno do card */
-}
-.card:hover {
-    transform: translateY(-10px); /* Move o card para cima */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta a sombra */
-}
-.container-depoimentos h2 {
-    text-align: center; /* Centraliza o texto horizontalmente */
-    margin-bottom: 30px; /* Ajuste para espaçar do conteúdo abaixo */
-    margin-top: 20px; /* Ajusta a margem superior para afastar o título do limite superior da seção */
-    color: #fff; /* Cor do texto */
-    font-size: 20px; /* Ajuste o tamanho do texto conforme necessário */
-    padding: 0; /* Remove padding */
-    position: relative; /* Para evitar que o título saia da área do formulário */
+    background-color: white;
+    width: 400px; /* Largura fixa */
+    height: 300px; /* Altura fixa */
+    border-radius: 50px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.1s ease;
+    text-align: center; /* Centraliza o conteúdo do card */
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Organiza os elementos em coluna */
+    justify-content: space-between; /* Garante que o conteúdo seja distribuído verticalmente */
 }
 
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.container-depoimentos h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    color: #fff;
+    font-size: 20px;
+    padding: 0;
+}
+
+.card h3 {
+    font-size: 18px; /* Ajuste o tamanho do título conforme necessário */
+    margin: 0 0 20px 0; /* Margem abaixo do título para afastar do conteúdo */
+    color: #333; /* Cor do título */
+}
 
 .card p {
-    font-size: 12px; /* Tamanho da fonte do parágrafo */
-    color: #555; /* Cor do texto (cinza claro) */
-    line-height: 1.6; /* Espaçamento entre linhas do texto */
+    font-size: 14px; /* Tamanho do parágrafo */
+    color: #555; /* Cor do texto */
+    line-height: 1.6; /* Espaçamento entre as linhas */
+    flex-grow: 1; /* Faz o parágrafo ocupar o espaço restante */
+    display: flex;
+    justify-content: center; /* Centraliza o parágrafo horizontalmente */
+    align-items: center; /* Centraliza o parágrafo verticalmente */
 }
-.card-content {
-    justify-items: center; /* Centraliza os itens horizontalmente dentro do grid */
-    align-items: center; /* Centraliza os itens verticalmente dentro do grid */
-}    
 
-footer{
+
+.rodape{
     background-color: #507FA9;
+    color: white;
+    height: auto;
+    width: 100%;
+    font-size: 14px;
+    font-family: helvetica;
+    border-top-left-radius: 60px ;
+    border-top-right-radius: 60px;
+    border: 10px solid #CADBE7;
+}
+.rodape a{
+    text-decoration: none;
+    color: white;
+}
+.rodape p{
+    margin-bottom: 5px;
+}
+.rodape-div{
+    display: flex;
+    width:100%;
+    margin: auto;
+    align-items: stretch;
+    padding: 60px 10px 40px 10px;
 }
 
-footer {
-    border-top-left-radius: 25px;  /* Arredonda o canto superior esquerdo */
-    border-top-right-radius: 25px; /* Arredonda o canto superior direito */
+.rodape-div-3-coluna {
+    text-align: center; /* Centraliza todo o conteúdo dentro da div */
+}
+
+
+.rodape-div-3-coluna a {
+    display: block; /* Faz o link ocupar a linha inteira */
+    margin-top: 10px; /* Espaçamento entre o texto e o link */
+}
+
+.rodape-div-3-coluna img {
+    width: 50px; /* Tamanho fixo da imagem */
+}
+.rodape-div-3-coluna img:hover{
+    background-color: #1B4769;
+}
+
+.rodape span{
     
+    font-size: 20px;
+    color: white;
 }
-/* Para o botão de 'formas-contato', que vai ficar no canto esquerdo */
-footer .formas-contato {
-    display: flex;               /* Ativa o Flexbox dentro dessa div */
-    flex-direction: column;      /* Coloca os itens em coluna (um embaixo do outro) */
-    text-align: left;            /* Alinha o conteúdo à esquerda */
-    gap: 10px;                   /* Espaço entre os botões */
-    width: 278px;
-    height: 46;
-    border-radius: 100px;
-}
-
-/* Para o botão de 'endereco', que vai ficar no centro */
-footer .endereco {
-    text-align: center; /* Centraliza o conteúdo */
+.rodape-direitos {
+    width: 100%; /* Garante que a div ocupe toda a largura disponível */
+    background-color: #072894;
+    padding: 10px;
+    margin: 0;
+    text-align: center; /* Centraliza o texto dentro da div */
+    color: white; /* Define a cor do texto para branco */
+    box-sizing: border-box; /* Garante que o padding não afete a largura total */
 }
 
-/* Para o botão de 'redes-sociais', que vai ficar no canto direito */
-footer .redes-sociais {
-    text-align: right;  /* Alinha o conteúdo à direita */
-    
+/*mobile*/
+@media (max-width: 768px) {
+    .rodape-div-1, .rodape-div-2, .rodape-div-3, .rodape-div-4{
+        width: calc(50% - 20px);
+        padding: 10px;
+    }
+    .rodape-div{
+        padding: 60px 0px 40px 0px;
+    }
 }
+
+
 
 
 
